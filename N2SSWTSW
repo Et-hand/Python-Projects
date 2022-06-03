@@ -1,0 +1,26 @@
+input = input()   # takes in a string input
+removal = input.split(" ")  # takes the input and splits it by spaces, where each element in the list is a word.
+for i in range(len(removal)):  #loops through the indexes of the lists
+    if removal[i] == "Mr." or removal[i] == "Mrs." or removal[i] == "Ms.": # looks at the indexes of the lists and checks if they are Mr., Ms., or Mrs.
+        if removal[i] == "Mr.": # if the value is Mr
+            removal[i] = "Mr" # it removes Mr
+        elif removal[i] == "Ms.": # if the value is Ms
+            removal[i] = "Ms" # removes Ms
+        elif removal[i] == "Mrs.": #if the value if Mrs
+            removal[i] = "Mrs" # removes Mrs.
+
+essay1 = []    #creates a new variable as a list
+essay = removal # makes removal the same as essay
+essay = " ".join(essay) # joins back the space, so it just a string
+essay = essay.split(". ") # splits it by periods to seperate the periods
+first_words = []  #makes list first_words
+for i in essay: # goes through the sentences
+    i = i.split(" ") # splits those sentences by word
+    essay1.append(i) #adds i to the new list to make a list with those split sentences
+    first_words.append(essay1[i][0])
+
+for i in range(len(0, first_words)):
+    if first_words[i] == "Mr" or first_words[i] == "Ms" or first_words[i] == "Mrs":
+        first_words[i] = first_words[i] + " " + essay1[i + 1]
+        
+print(first_words)
